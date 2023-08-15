@@ -1,0 +1,13 @@
+img {
+  height: 100px;
+}
+
+main {
+  border: 1px solid red;
+  background-color: black;
+}
+h2 {
+  color: white;
+  background-color: black;
+  gap: 50px;
+}
