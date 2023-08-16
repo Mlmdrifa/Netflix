@@ -1,5 +1,5 @@
 import "./App.css";
-// import "./Film.css";
+import data from "./assets/data.json";
 
 function App() {
   return (
@@ -9,13 +9,20 @@ function App() {
         alt="Logo"
       />
 
-      <h2>Emissions TV</h2>
-      <h2>Séries françaises</h2>
-      <h2>Comédies</h2>
-      <h2>Nouveautés</h2>
-      <h2>Documentaires</h2>
-      <h2>Séries US</h2>
-      <h2></h2>
+      {data.map((elem, index) => {
+        console.log(elem);
+        return (
+          <div key={index}>
+            <p>{elem.category}</p>
+            <div className="caroussel">
+              {elem.images.map((url, index) => {
+                console.log(url);
+                return <img key={index} src={url} alt="" />;
+              })}
+            </div>
+          </div>
+        );
+      })}
     </main>
   );
 }
